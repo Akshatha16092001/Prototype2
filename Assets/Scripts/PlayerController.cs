@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(-10, transform.position.y, transform.position.z);
         }
-        if ( transform.position.x<10)
+        if ( transform.position.x > 10)
         {
             transform.position = new Vector3(10, transform.position.y, transform.position.z);
         }
