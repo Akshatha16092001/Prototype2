@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput; 
+    public float horizontalInput;
     public float speed = 10.0f;
     //public float leftBoundary = -10.0f;
     //public float rightBoundary = 10.0f;
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-        if ( Input. GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //Launch a projectile from the player
             Instantiate(projectilePrefab, transform.Translate, projectilePrefab, transform.rotation);
@@ -37,5 +38,10 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
     }
-    
+
+    private void Instantiate(GameObject projectilePrefab1, Action<Vector3, Space> translate, GameObject projectilePrefab2, Quaternion rotation)
+    {
+        throw new NotImplementedException();
+    }
 }
+
