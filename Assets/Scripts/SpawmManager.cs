@@ -14,6 +14,10 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.S)
+        {
+            Instantiate(animalPrefabs[0], new Vector3(0, 0, 20), animalPrefabs[0].transform.rotation);
+        }
         
     }
 }
