@@ -29,19 +29,16 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Launch a projectile from the player
-            Instantiate(projectilePrefab, transform.Translate, projectilePrefab, transform.rotation);
+            Instantiate ( projectilePrefab , transform.position , projectilePrefab.transform.rotation );
         }
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+        
     }
 
-    private void Instantiate(GameObject projectilePrefab1, Action<Vector3, Space> translate, GameObject projectilePrefab2, Quaternion rotation)
-    {
-        throw new NotImplementedException();
-    }
 }
 
